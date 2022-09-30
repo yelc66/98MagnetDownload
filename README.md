@@ -3,3 +3,31 @@
 
 
 目前支持客户端：qBittorrent 、115网盘、aria2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 特别感谢大佬的脚手架
+
+@lisonge(https://github.com/lisonge/vite-plugin-monkey)
+
+
