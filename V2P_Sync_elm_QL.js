@@ -77,7 +77,7 @@ function populateParam(param) {
 
 async function GetRewrite() {
   if ($request.headers) {
-    let cookie = $request.headers.cookie ? $request.headers.cookie : $request.headers.Cookie
+    let cookie = $request.headers.Cookie
     console.log(cookie)
     if (cookie.indexOf('SID=') == -1 || cookie.indexOf('cookie2=') == -1) return
     let SID = cookie.match(/(SID=.+?;)/)[1]
