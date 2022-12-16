@@ -1,7 +1,7 @@
 /*
-V2P同步变量到青龙
+同步变量到青龙
 
-一键导出V2P的变量到青龙，支持正则匹配
+一键导出的变量到青龙，支持正则匹配
 需要用到的变量：qlParam和qlWhiteList
 
 变量qlParam，在V2P/圈X之类都可以通过boxjs来添加，格式：
@@ -192,7 +192,7 @@ async function enableEnv(id, name) {
 
 //通知
 const msg = (subtitle, cookie,name) => {
-  $.msg($.name, `${subtitle}\n\nboxjs搜索${name}查看`,`ck值：${cookie}`)
+  $.msg($.name, `${subtitle} boxjs可搜索${name}查看`,`ck值：${cookie}`)
   // if (msgType) return $message.success($.name, subtitle)
   // return $message.eroor($.name, subtitle)
 }
