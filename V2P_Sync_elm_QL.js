@@ -4,7 +4,7 @@ V2P同步变量到青龙
 一键导出V2P的变量到青龙，支持正则匹配
 需要用到的变量：qlParam和qlWhiteList
 
-变量qlParam，在V2P里面添加，格式：
+变量qlParam，在V2P/圈X之类都可以通过boxjs来添加，格式：
 host=127.0.0.1:5700&client_id=xxxxxx&client_secret=yyyyyyyyyyyyyyyyyy
 其中host是你的青龙IP和端口，client_id和client_secret需要到 青龙->系统设置->应用设置 里面添加，需要添加环境变量权限
 
@@ -77,14 +77,12 @@ function populateParam(param) {
 
 async function GetRewrite() {
   if ($request.headers) {
-   let cookie = $request.headers.cookie ? $request.headers.cookie : $request.headers.Cookie
-    console.log(cookie)
+    let cookie = $request.headers.cookie ? $request.headers.cookie : $request.headers.Cookie
     if (cookie.indexOf('SID=') == -1 || cookie.indexOf('cookie2=') == -1) return
     let SID = cookie.match(/(SID=.+?;)/)[1]
     let cookie2 = cookie.match(/(cookie2=.+?;)/)[1]
     let userId = cookie.match(/(USERID=.+?;)/)[1]
     let ck = SID + cookie2 + userId
-    console.log(`获取到${ck}的饿了么ck`)
     await getToken()
     if (!qlAuth) return
     await $.wait(100)
