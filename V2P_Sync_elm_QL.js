@@ -13,13 +13,10 @@ host=127.0.0.1:5700&client_id=xxxxxx&client_secret=yyyyyyyyyyyyyyyyyy
 h5.ele.me
 
 [rewrite_local]
-^https:\/\/h5\.ele\.me\/ url script-request-header https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemGetCookies.js
+^https:\/\/h5\.ele\.me\/ url script-request-header https://raw.githubusercontent.com/yelc66/98MagnetDownload/main/V2P_Sync_elm_QL.js
 
-1. 再配置重写规则:
-   - Surge: 把两条远程脚本放到`[Script]`
-   - QuanX: 把`elemGetCookies.js`和`elemSign.js`传到`On My iPhone - Quantumult X - Scripts` (传到 iCloud 相同目录也可, 注意要打开 quanx 的 iCloud 开关)
-2. 打开 APP, 访问下`我的`>`吃货豆查看详情
-3. 系统提示: `获取Cookie: 成功` （如果不提示获取成功, 尝试杀进程再进`个人`>`每日签到`）
+打开 APP, 访问下`我的`>`吃货豆查看详情
+系统提示: `获取Cookie: 成功并且同步到青龙`
 */
 
 const jsname = 'V2P获取饿了么CK同步到青龙'
