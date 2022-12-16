@@ -19,7 +19,7 @@ h5.ele.me
 系统提示: `获取Cookie: 成功并且同步到青龙`
 */
 
-const jsname = 'V2P获取饿了么CK同步到青龙'
+const jsname = '饿了么CK同步到青龙'
 const $ = new Env(jsname)
 const logDebug = 0 //1为打印所有返回，0为不打印
 const notifyFlag = 1 //0为关闭通知，1为打开通知,默认为1
@@ -147,7 +147,7 @@ async function addEnv(name, value, remarks) {
   //console.log(result)
   if (result.code == 200) {
     console.log(`添加青龙环境变量${name}成功`)
-    msg(`新增青龙环境变量${name}成功`, value)
+    msg(`新增青龙环境变量${name}成功`, value,name)
     $.setdata(name,value)
   } else {
     console.log(`添加青龙环境变量${name}失败: ${result.message}`)
@@ -167,7 +167,7 @@ async function updateEnv(name, value, remarks, id) {
   //console.log(result)
   if (result.code == 200) {
     console.log(`更新青龙环境变量${name}成功`)
-    msg(`更新青龙环境变量${name}成功`, value)
+    msg(`更新青龙环境变量${name}成功`, value,name)
     $.setdata(value,name)
   } else {
     console.log(`更新青龙环境变量${name}失败: ${result.message}`)
@@ -191,8 +191,8 @@ async function enableEnv(id, name) {
 }
 
 //通知
-const msg = (subtitle, cookie) => {
-  $.msg($.name, subtitle,`ck值：${cookie}`)
+const msg = (subtitle, cookie,name) => {
+  $.msg($.name, `${subtitle}boxjs搜索${name}查看`,`ck值：${cookie}`)
   // if (msgType) return $message.success($.name, subtitle)
   // return $message.eroor($.name, subtitle)
 }
