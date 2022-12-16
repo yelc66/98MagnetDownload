@@ -4,11 +4,10 @@
 一键导出的变量到青龙，支持正则匹配
 需要用到的变量：qlParam和qlWhiteList
 
-变量qlParam，在V2P/圈X之类都可以通过boxjs来添加，格式：
+变量qlParam，在V2P/圈X之类都可以通过boxjs来添加这个变量，格式：
 host=127.0.0.1:5700&client_id=xxxxxx&client_secret=yyyyyyyyyyyyyyyyyy
 其中host是你的青龙IP和端口，client_id和client_secret需要到 青龙->系统设置->应用设置 里面添加，需要添加环境变量权限
 
-需要同步的时候，运行下这个脚本即可
 [MITM]
 h5.ele.me
 
@@ -17,6 +16,7 @@ h5.ele.me
 
 打开 APP, 访问下`我的`>`吃货豆查看详情
 系统提示: `获取Cookie: 成功并且同步到青龙`
+运行下这个脚本即可
 */
 
 const jsname = '饿了么CK同步到青龙'
@@ -146,7 +146,7 @@ async function addEnv(name, value, remarks) {
   if (!result) return
   //console.log(result)
   if (result.code == 200) {
-    console.log(`添加青龙环境变量${name}成功`)
+    // console.log(`添加青龙环境变量${name}成功`)
     msg(`新增青龙环境变量${name}成功`, value,name)
     $.setdata(name,value)
   } else {
@@ -166,12 +166,12 @@ async function updateEnv(name, value, remarks, id) {
   if (!result) return
   //console.log(result)
   if (result.code == 200) {
-    console.log(`更新青龙环境变量${name}成功`)
-    msg(`更新青龙环境变量${name}成功`, value,name)
+    // console.log(`更新青龙环境变量${name}成功`)
+    msg(`更新青龙环境变量${remarks}成功`, value,name)
     $.setdata(value,name)
   } else {
-    console.log(`更新青龙环境变量${name}失败: ${result.message}`)
-    msg(`更新青龙环境变量${name}失败: ${result.message}`)
+    console.log(`更新青龙环境变量${remarks}失败: ${result.message}`)
+    msg(`更新青龙环境变量${remarks}失败: ${result.message}`)
   }
 }
 
