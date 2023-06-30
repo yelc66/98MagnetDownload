@@ -6,7 +6,7 @@
 // @description  一键下载 ✅115网盘 ✅PikPak ✅qbitorrent ✅aria2 添加磁力链接 目前支持98堂、javbus
 // @license      MIT License
 // @icon         https://riyugo.com/tools/ico/favicon/27025758y8.ico
-// @match        https://*.sehuatang.net/*
+// @match        https://*.sehuatang.org/*
 // @match        https://*.javbus.com/*
 // @require      https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js
 // @require      https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js
