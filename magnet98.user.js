@@ -8,6 +8,7 @@
 // @icon         https://riyugo.com/tools/ico/favicon/27025758y8.ico
 // @match        https://*.sehuatang.org/*
 // @match        https://*.javbus.com/*
+// @match        https://*.sehuatang.net/*
 // @require      https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js
 // @require      https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js
 // @require      https://lf9-cdn-tos.bytecdntp.com/cdn/expire-10-y/blueimp-md5/2.19.0/js/md5.min.js
