@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         98tang一键推送下载到115与115cookie登录
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  根据98tang特定元素插入按钮并一键推送下载到115与115cookie登录，支持bot与web下载
 // @author       yelc668
 // @match        *://*.115.com/*
@@ -53,7 +53,7 @@
       codes.forEach((code) => {
         const textContent = code.textContent
         const magnetLinks = textContent.match(/magnet:\S+/g)
-        const ed2kLinks = textContent.match(/ed2k:\S+/g)
+        const ed2kLinks = textContent.match(/ed2k:\/\/\|file\|.*?\|[0-9]+\|[A-Fa-f0-9]+\|\//g)
         if (magnetLinks) {
           links = links.concat(magnetLinks)
         }
@@ -176,6 +176,7 @@
                   return
                 }
                 if (!falseUrl) {
+                  if (resData.state === false) return reject(resData.error_msg || '添加任务失败')
                   const notifications = resData.result.map((item, index) => {
                     if (item.state === true) {
                       return `添加成功！索引：${index}`
